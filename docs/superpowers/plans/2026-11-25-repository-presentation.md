@@ -66,8 +66,8 @@
 
 - [x] 独立复查整体 diff（当前 harness 无 subagent 工具，采用作者二次复查并说明）。
 - [x] 运行适合本次修改的完整测试、CLI/API smoke、链接/YAML 检查与 `git diff --check`。
-- [ ] 完成可审核的本地提交；核实远程是否变化、身份和推送权限，不强推或改写历史。
-- [ ] 如共享主分支发布需额外确认，保留完整本地成果并仅在最后询问远程发布。
+- [x] 完成可审核的本地提交；普通推送维护分支成功，未强推或改写历史。
+- [x] 保留完整本地成果并推送至远程维护分支；主分支合并仍待用户选择。
 
 ## 执行记录
 
@@ -80,4 +80,5 @@
 - Final review: self-review (no subagent tool)。对照代码核查入口、配置、manifest、告警、历史结果与复现脚本；没有修改主包算法或历史数据。
 - Final review: 区域 SSIM 回退、非独立测试集、计时范围、配置部分校验、CLI 中间结果开关与预设锐化依赖均已在文档说明。未将本次维护扩为算法修复。
 - Verification: Python 3.12，pytest 16 passed；CLI/API/scenarios、Markdown 链接、YAML 和 git diff --check 均通过。远程 CI 还未运行。
-- Remote: 初始 clone 成功；最终多次读取远程 refs 因 TLS 握手失败，无法确认远程最新状态或发布完成。未关闭 TLS 证书校验，未强推。
+- Remote: 初始 clone 成功；后续多次读取 refs 曾遇到 TLS 握手失败，最终普通 push 成功。远程维护分支 `docs/professional-repository` 已建立并跟踪；未关闭 TLS 证书校验，未强推。主分支未合并，PR 尚未创建。
+- Delivery: 主变更提交 `67a4b8d`；当前提交身份使用明确的 Codex 标识，仅对提交命令生效，不更改用户全局 Git 身份。
