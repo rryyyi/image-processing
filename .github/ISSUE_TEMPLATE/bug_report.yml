@@ -1,0 +1,38 @@
+name: Bug report / 问题反馈
+description: 提交可复现的错误、异常输出或文档问题。
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: 请先查看 README 和已有 Issues。提交前检查图像、路径及日志，避免公开敏感文档和凭据。
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 期望与实际行为
+      description: 说明你希望发生什么，实际发生了什么。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现步骤
+      description: 提供命令、配置、输入尺寸和可公开的最小样本；文档问题请提供对应位置。
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 操作系统、Python、依赖版本、代码版本；涉及对照模型时补充 CPU/GPU 信息。
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 错误与诊断信息
+      description: 完整错误、相关 warnings、脱敏的 manifest 摘要或效果对比。
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充说明
+      description: 是否尝试过默认配置、是否与特定场景或版本有关。
