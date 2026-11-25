@@ -1,6 +1,19 @@
-# Environments
+# Environments and local credentials
 .venv/
 .venvs/
+.env
+.env.*
+!.env.example
+
+# Build artifacts and local tooling
+build/
+dist/
+.superpowers/
+
+# Ad-hoc runs (curated examples and tables remain tracked)
+results/runs/
+results/benchmark_local/
+results/benchmark_with_docshadow/
 
 # Third-party source and large local data
 third_party/
